@@ -91,7 +91,7 @@ class Check(models.Model):
   date = models.DateTimeField(auto_now_add=True)
 
   def get_total(self):
-    return self.order.get_total_sum() * (1+(self.servicefee.percentage/100))
+    return round((self.order.get_total_sum() * (1+(self.servicefee.percentage/100))), 2)
 
   def __str__(self):
       return f"Check #{self.order}"

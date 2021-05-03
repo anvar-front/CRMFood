@@ -278,7 +278,7 @@ class CheckDetailView(APIView):
 
   def get(self, request, pk):
     checks = self.get_object(pk)
-    serializers = MealSerializer(checks)
+    serializers = CheckSerializer(checks)
     return Response(serializers.data)
 
   def delete(self, request, pk, format=None):

@@ -11,6 +11,7 @@ urlpatterns = [
   path('meals/<int:pk>/', views.MealDetailView.as_view()),
   path('orders/', views.OrderListView.as_view()),
   path('checks/', views.CheckListView.as_view()),
+  path('checks/<int:pk>', views.CheckDetailView.as_view()),
   path('mealstoorder/', views.MealsToOrderListView.as_view()),
   path('activeorders/', views.ActiveOrderListView.as_view()),    
 ]
