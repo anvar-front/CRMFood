@@ -104,6 +104,7 @@ class MealsToOrder(models.Model):
   orderid = models.ForeignKey(Order, on_delete=models.CASCADE, null=True, related_name='orderid')
   mealsid = models.ForeignKey(Meal, on_delete=models.CASCADE, null=True)
   count = models.IntegerField(default=1)
+  checkid = models.ForeignKey(Check, on_delte=models.CASCADE, related_name='checkid', null=True)
 
   def get_sum(self):
     return self.mealsid.price * self.count
